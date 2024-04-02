@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS reeltalk_db;
+CREATE DATABASE reeltalk_db;
