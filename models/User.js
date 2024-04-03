@@ -23,7 +23,7 @@ User.init(
         isAlphanumeric: true,
         len: {
           args: [5, 255],
-          msg: 'Username must be atleast 5 characters long'
+          msg: 'Username must be atleast 5 characters long ಠ_ಠ'
         }
       },
     },
@@ -33,7 +33,7 @@ User.init(
       validate: {
         len: {
           args: [10, 255],
-          msg: 'password must be atleast 10 characters long'
+          msg: 'password must be atleast 10 characters long (＃｀д´)ﾉ'
         }
       }
     },
