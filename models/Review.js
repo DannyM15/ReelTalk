@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User');
 
 const { SERIALIZABLE } = require('sequelize/types/table-hints');
 
@@ -56,6 +55,5 @@ Review.init({
     modelName: 'review'
 }
 );
-Review.belongsTo(User);
 
 module.exports = Review
