@@ -1,8 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-const { SERIALIZABLE } = require('sequelize/types/table-hints');
-
 class Review extends Model { }
 
 Review.init({
