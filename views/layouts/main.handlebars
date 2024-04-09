@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reel Talk</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <header>
         <h1>Movie Ratings</h1>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/my-rating">My rating</a></li>
-                <li><a href="top-rated">Top rated moives</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <!-- <li><a href="login.html">My rating</a></li>
+                <li><a href="homepage.html">Top rated moives</a></li> -->
+                <li><a href="login.html">Log In</a></li>
+                <li><a href="createuser.html">Create Account</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        {{!-- <section class="about">
+        <section class="about">
             <h2>About Movie Ratings</h2>
             <p>Welcome to Movie Ratings! We provide a platform for movie enthusiasts to discover, rate, and review their favorite movies.</p>
             <p>Whether you're a casual moviegoer or a hardcore cinephile, you'll find something to enjoy on Movie Ratings.</p>
@@ -32,7 +34,7 @@
                 <li>Rate movies based on your personal experience.</li>
                 <li>Share your own reviews and ratings with the community.</li>
             </ol>
-        </section> --}}
+        </section>
         {{{ body }}} 
         {{!-- for the template to know how to load the main handlerbars here --}}
     </main>
