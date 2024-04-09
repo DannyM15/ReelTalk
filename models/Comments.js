@@ -13,12 +13,12 @@ Comment.init ({
         text: {
             type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                isURL: {
-                    args: false,
-                    msg: 'content cannot be a URL (╯°□°)╯︵ ┻━┻'
-                }
-            },
+            // validate: {
+            //     isURL: {
+            //         args: false,
+            //         msg: 'content cannot be a URL (╯°□°)╯︵ ┻━┻'
+            //     }
+            // },
         },
         timeCreated: {
             type: DataTypes.DATE,
