@@ -11,11 +11,11 @@
         <h1>Movie Ratings</h1>
         <nav>
             <ul>
-                <li><a href="homepage.html">Home</a></li>
+                <li><a href="main.handlebars">Home</a></li>
                 <!-- <li><a href="login.html">My rating</a></li>
                 <li><a href="homepage.html">Top rated moives</a></li> -->
-                <li><a href="login.html">Log In</a></li>
-                <li><a href="createuser.html">Create Account</a></li>
+                <li><a href="login.handlebars">Log In</a></li>
+                <li><a href="createuser.handlebars">Create Account</a></li>
             </ul>
         </nav>
     </header>
@@ -29,11 +29,28 @@
         <section class="how-it-works">
             <h2>How It Works</h2>
             <ol>
-                <li>Explore our collection of movies.</li>
-                <li>Read reviews and ratings from other users.</li>
-                <li>Rate movies based on your personal experience.</li>
-                <li>Share your own reviews and ratings with the community.</li>
+                <p>Explore our collection of movies.</p>
+                <p>Read reviews and ratings from other users.</p>
+                <p>Rate movies based on your personal experience.</p>
+                <p>Share your own reviews and ratings with the community.</p>
             </ol>
+        </section>
+        <section class="hero">
+            <h2>Welcome to Movie Ratings</h2>
+            <p>Discover and rate your favorite movies!</p>
+            <a href="#" class="btn">Explore Movies</a>
+        </section>
+        <section class="top-rated">
+            <div class="movie-list">
+                {{#each Explore}}
+                    <div class="movie">
+                        <h3>{{ title }}</h3>
+                        <p>Rating: {{ rating }}/10</p>
+                        <img src="{{ imageUrl }}" alt="{{ title }} Poster">
+                        <a href="/movies/{{ id }}" class="btn">View Details</a>
+                    </div>
+                {{/each}}
+            </div>
         </section>
         {{{ body }}} 
         {{!-- for the template to know how to load the main handlerbars here --}}
