@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    {{!-- <div class="floating-background"></div> --}}
     <div id="rater"></div>
     <header>
         <h1>Movie Ratings</h1>
         <nav>
             <ul>
                 <li><a href="main.handlebars">Home</a></li>
+Feature/homepage
+                <li><a href="login.handlebars">Log In</a></li>
+                <li><a href="createuser.handlebars">Create Account</a></li>
+=======
                 <!-- <li><a href="login.html">My rating</a></li>
                 <li><a href="homepage.html">Top rated moives</a></li> -->
             <nav>
@@ -26,6 +29,7 @@
         {{/if}}
       </nav>
                 <li><a href="/createuser">Create Account</a></li>
+main
             </ul>
         </nav>
     </header>
@@ -59,14 +63,14 @@
                     <div class="movie">
                         <h3>{{ title }}</h3>
                         <div id="rater"></div>
-                        {{!-- <img src="{{ imageUrl }}" alt="{{ title }} Poster"> --}}
+                        <img src="{{ imageUrl }}" alt="{{ title }} Poster">
                         <a href="/movies/{{ id }}" class="btn">Rate/Comment</a>
                     </div>
                 {{/each}}
             </div>
         </section>
         {{{ body }}} 
-        {{!-- for the template to know how to load the main handlerbars here --}}
+        for the template to know how to load the main handlerbars here --}}
     </main>
 {{!-- <script src="node-modules/rater-js/index.js"></script> --}}
 
