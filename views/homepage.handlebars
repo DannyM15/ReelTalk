@@ -11,25 +11,45 @@
         <h1>Movie Rating Homepage</h1>
     </header> --}}
     <main>
+        <section class="about">
+            <h2>About Movie Ratings</h2>
+            <p>Welcome to Movie Ratings! We provide a platform for movie enthusiasts to discover, rate, and review their favorite movies.</p>
+            <p>Whether you're a casual moviegoer or a hardcore cinephile, you'll find something to enjoy on Movie Ratings.</p>
+            <p>Explore our extensive database of movies, read reviews from other users, and share your own ratings and thoughts.</p>
+        </section>
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <ol>
+                <p>Explore our collection of movies.</p>
+                <p>Read reviews and ratings from other users.</p>
+                <p>Rate movies based on your personal experience.</p>
+                <p>Share your own reviews and ratings with the community.</p>
+            </ol>
+        </section>
         <section class="hero">
             <h2>Welcome to Movie Ratings</h2>
             <p>Discover and rate your favorite movies!</p>
-            <a href="#" class="btn">Explore Movies</a>
-        </section>
+             <div class="container">
+        <div class="outer-content-box">
+            <h2>Title</h2>
+            <div class="inner-content-box">
+                <h2>Post</h2>
         <section class="top-rated">
-            <h2>Top Rated Movies</h2>
             <div class="movie-list">
-                {{#each topRatedMovies}}
+                {{#each Explore}}
                     <div class="movie">
                         <h3>{{ title }}</h3>
-                        <p>Rating: {{ rating }}/10</p>
+                        <div id="rater"></div>
                         <img src="{{ imageUrl }}" alt="{{ title }} Poster">
-                        <a href="/movies/{{ id }}" class="btn">View Details</a>
+                        <a href="/movies/{{ id }}" class="btn">Rate/Comment</a>
                     </div>
                 {{/each}}
             </div>
         </section>
-     </main>
+        {{{ body }}} 
+        {{!-- {{ --for the template to know how to load the main handlerbars here --}} --}}
+    </main>
+    
 
 
 {{!-- </body>

@@ -18,7 +18,7 @@
             </ul>
         </nav>
     </header>
-    {{!-- <main>
+    <main>
         <section class="about">
             <h2>About Movie Ratings</h2>
             <p>Welcome to Movie Ratings! We provide a platform for movie enthusiasts to discover, rate, and review their favorite movies.</p>
@@ -48,15 +48,15 @@
                     <div class="movie">
                         <h3>{{ title }}</h3>
                         <div id="rater"></div>
-                        {{!-- <img src="{{ imageUrl }}" alt="{{ title }} Poster"> --}}
-                        {{!-- <a href="/movies/{{ id }}" class="btn">Rate/Comment</a>
+                        <img src="{{ imageUrl }}" alt="{{ title }} Poster">
+                        <a href="/movies/{{ id }}" class="btn">Rate/Comment</a>
                     </div>
                 {{/each}}
             </div>
         </section>
         {{{ body }}} 
-        {{!-- for the template to know how to load the main handlerbars here --}}
-    </main> --}}
+        for the template to know how to load the main handlerbars here --}}
+    </main>
 <script src="node-modules/rater-js/index.js"></script>
 </body>
 </html>
