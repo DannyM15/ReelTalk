@@ -40,8 +40,11 @@
         <section class="hero">
             <h2>Welcome to Movie Ratings</h2>
             <p>Discover and rate your favorite movies!</p>
-            <a href="#" class="btn">Explore Movies</a>
-        </section>
+             <div class="container">
+        <div class="outer-content-box">
+            <h2>Title</h2>
+            <div class="inner-content-box">
+                <h2>Post</h2>
         <section class="top-rated">
             <div class="movie-list">
                 {{#each Explore}}
@@ -49,7 +52,7 @@
                         <h3>{{ title }}</h3>
                         <div id="rater"></div>
                         {{!-- <img src="{{ imageUrl }}" alt="{{ title }} Poster"> --}}
-                        <a href="/movies/{{ id }}" class="btn">View Details</a>
+                        <a href="/movies/{{ id }}" class="btn">Rate/Comment</a>
                     </div>
                 {{/each}}
             </div>
