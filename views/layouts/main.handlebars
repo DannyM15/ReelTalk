@@ -13,10 +13,30 @@
         <nav>
             <ul>
                 <li><a href="main.handlebars">Home</a></li>
+<<<<<<< HEAD
                 <!-- <li><a href="login.html">My rating</a></li>
                 <li><a href="homepage.html">Top rated moives</a></li> -->
                 <li><a href="login.handlebars">Log In</a></li>
                 <li><a href="createuser.handlebars">Create Account</a></li>
+=======
+Feature/homepage
+                <li><a href="login.handlebars">Log In</a></li>
+                <li><a href="createuser.handlebars">Create Account</a></li>
+=======
+                <!-- <li><a href="login.html">My rating</a></li>
+                <li><a href="homepage.html">Top rated moives</a></li> -->
+            <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/review">reviews</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+                <li><a href="/createuser">Create Account</a></li>
+main
+>>>>>>> 654bbafce1ea197e29845aea6db0daa43f15ccb6
             </ul>
         </nav>
     </header>
