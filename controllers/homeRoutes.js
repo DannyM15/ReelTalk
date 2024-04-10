@@ -1,17 +1,23 @@
 const router = require('express').Router();
-const { User } = require('../models');
-// const withAuth = require('../utils/auth');
+const { User, Comment, Review } = require('../models');
+const withAuth = require('../utils/auth');
 
-// TODO: Add a comment describing the functionality of the withAuth middleware
-// The withAuth middleware checks if a user is logged in by verifying the presence of the 'logged_in' property in the session object.
-// If the user is logged in, it allows the request to proceed to the route handler; otherwise, it redirects the user to the login page.
+
 router.get('/', async (req, res) => { 
   try {
-      //TODO what db do we want to show on the homepage?
-      //query here to load all recent reviews
+    const reviewData = await Review.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const reviews = reviewData.map((review) => review.get({ plain: true }));
+
     res.render('homepage', {
-      // RECENT REVIEWS?
-    
+      reviews,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -19,15 +25,56 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/review/:id', async (req, res) => {
+  try {
+    const reviewData = await Review.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const review = reviewData.get({ plain: true });
+
+    res.render('review', {
+      ...review,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Review, Comment }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 router.get('/login', (req, res) => {
-  // TODO: Add a comment describing the functionality of this if statement
-  // This if statement checks if the user is already logged in. If yes, it redirects the user to the homepage; otherwise, it renders the login page.
+
   if (req.session.logged_in) {
-    res.redirect('/'); // Redirect to the homepage if already logged in
+    res.redirect('/'); 
     return;
   }
 
-  res.render('login'); // Render the login page if not logged in
+  res.render('login'); 
 });
 
 module.exports = router;
