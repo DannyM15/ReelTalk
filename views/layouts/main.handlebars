@@ -16,8 +16,16 @@
                 <li><a href="main.handlebars">Home</a></li>
                 <!-- <li><a href="login.html">My rating</a></li>
                 <li><a href="homepage.html">Top rated moives</a></li> -->
-                <li><a href="login.handlebars">Log In</a></li>
-                <li><a href="createuser.handlebars">Create Account</a></li>
+            <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/review">reviews</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+                <li><a href="/createuser">Create Account</a></li>
             </ul>
         </nav>
     </header>
@@ -60,6 +68,10 @@
         {{{ body }}} 
         {{!-- for the template to know how to load the main handlerbars here --}}
     </main>
-<script src="node-modules/rater-js/index.js"></script>
+{{!-- <script src="node-modules/rater-js/index.js"></script> --}}
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
