@@ -16,6 +16,21 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const ReviewData = await Review.findByPk(req.params.id, {
+      include: [{ model: Review }]
+    });
+    if (!categoryData) {
+      res.status(404).json({ message: 'no category found by this id'});
+    }
+    res.status(200).json(ReviewData);
+} catch (error) {
+  res.status(500).json(err);
+}
+});
+
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const reviewData = await Review.destroy({
