@@ -1,0 +1,14 @@
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+     <a href="/review/{{review.id}}">{{review.title}}</a>
+    </h2>
+    <p>Created by {{review.user.username}} on {{review.timeCreated}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{review.post}}
+    </p>
+  </div>
+</div>
