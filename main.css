@@ -262,10 +262,16 @@ button:hover {
 /* Create Preview handlebars*/
 
 .review-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    margin: 20px;
+    margin: 13px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
