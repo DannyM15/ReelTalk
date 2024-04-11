@@ -14,22 +14,16 @@
         <h1>Movie Ratings</h1>
         <nav>
             <ul>
-                {{!-- <li><a href="main.handlebars">Home</a></li>
-                <li><a href="login.handlebars">Log In</a></li>
-                <li><a href="createuser.handlebars">Create Account</a></li> --}}
                 <nav>
                     <!-- Conditionally render login or logout links -->
                     {{#if logged_in}}
-                    <li><a href="logout">Log Out</a></li>
-                    {{!-- <a href="/review">reviews</a>  --}}
                     <li><a href="/review">Review</a></li>
                     <button class="button" id="logout">logout</button>
                     {{else}}
                      <li><a href="/login">Log In</a></li>
-                    {{!-- <a href="/login">login</a> --}}
+                     <li><a href="/createuser">Create Account</a></li>
                     {{/if}}
                 </nav>
-                <li><a href="/createuser">Create Account</a></li>
             </ul>
         </nav>
     </header>

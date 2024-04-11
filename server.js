@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const apiRoutes = require('./controllers/api/reviewRoutes');
-const rater = require('rater-js');
+// const rater = require('rater-js');
 
 const sequelize = require('./config/connection');
 

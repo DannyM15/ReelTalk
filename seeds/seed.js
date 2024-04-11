@@ -18,14 +18,14 @@ const seedDatabase = async () => {
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
-       // replace for comments
-    for (const comment of commentData) {
-        await Comment.create({
-            ...comment,
-            user_id: users[Math.floor(Math.random() * users.length)].id,
-            review_id: reviews[Math.floor(Math.random() * reviews.length)].id,
-        });
-    }
+    //    // replace for comments
+    // for (const comment of commentData) {
+    //     await Comment.create({
+    //         ...comment,
+    //         user_id: users[Math.floor(Math.random() * users.length)].id,
+    //         review_id: reviews[Math.floor(Math.random() * reviews.length)].id,
+    //     });
+    // }
     process.exit(0);
 }
 
