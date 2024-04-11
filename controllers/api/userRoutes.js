@@ -1,6 +1,7 @@
 const router = require('express').Router();
 // Import the User model from the models folder
 const { User } = require('../../models');
+const { Op } = require('sequelize');
 
 // If a POST request is made to /api/users, a new user is created. The user id and logged in state is saved to the session within the request object.
 router.post('/', async (req, res) => {
@@ -59,14 +60,26 @@ router.post('/createuser', async (req, res) => {
     const { username, email, password } = req.body;
 
     // Check if username or email already exists
-    const existingUser = await User.findOne({
+    // const existingUser = await User.findOne({
+    //   where: {
+    //     [Op.or]: [{ username }, { email }],
+    //   },
+    // });
+
+    const { count, rows } = await User.findAndCountAll({
       where: {
+        
         [Op.or]: [{ username }, { email }],
+        
       },
+      offset: 10,
+      limit: 2,
     });
+    console.log(count);
+    console.log(rows);
 
     // If user already exists, return error
-    if (existingUser) {
+    if (count > 0) {
       return res.status(400).json({ error: 'Username or email already exists' });
     }
 
