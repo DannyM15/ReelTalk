@@ -51,6 +51,36 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// Route to create a new user
+router.post('/createuser', async (req, res) => {
+  try {
+    // Extract username, email, and password from request body
+    const { username, email, password } = req.body;
+
+    // Check if username or email already exists
+    const existingUser = await User.findOne({
+      where: {
+        [Op.or]: [{ username }, { email }],
+      },
+    });
+
+    // If user already exists, return error
+    if (existingUser) {
+      return res.status(400).json({ error: 'Username or email already exists' });
+    }
+
+    // Create new user
+    const newUser = await User.create({ username, email, password });
+
+    // Optionally, you may want to send back the newly created user data
+    res.status(201).json(newUser);
+  } catch (error) {
+    console.error('Error creating user:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // If a POST request is made to /api/users/logout, the function checks the logged_in state in the request.session object and destroys that session if logged_in is true.
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
