@@ -14,7 +14,7 @@
             {{!-- <div class="inner-content-box"> --}}
                 {{!-- <h2>Post</h2> --}}
                 <div class="review-box">
-                    {{!-- <h2>Your Review</h2> --}}
+                    <h2>Your Review</h2>
                     <p>This is your review content</p>
                 </div>
             </div>
@@ -38,6 +38,7 @@
         {{{ body }}}     
  <section>
         {{#each reviews as |review| }}
+      <div class="container">       
         <div class="review-box">
             <div class="row mb-4 project">
                 <div class="col-md-5">
@@ -51,7 +52,8 @@
                     <p>{{review.post}}</p>
                 </div>
             </div>
-        </div>
+          </div> 
+      </div>
         {{/each}}
     </section>
         {{!-- {{ --for the template to know how to load the main handlerbars here --}}
