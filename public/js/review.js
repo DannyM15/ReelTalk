@@ -3,19 +3,19 @@ const newReviewHandler = async (event) => {
   
     const title = document.querySelector('#movie-title').value.trim();
     const review = document.querySelector('#post-review').value.trim();
-    const rating = parseFloat(document.querySelector('#movie-rating').value.trim());
+    // const rating = document.querySelector('#movie-rating').value.trim();
   
-    if (title && review && rating && rating >= 0 && rating <= 5) {
-      const response = await fetch(`/api/review`, {
+    if (title && review ) {
+      const response = await fetch(`/api/reviews`, {
         method: 'POST',
-        body: JSON.stringify({ title, review, rating }),
+        body: JSON.stringify({ title, post: review }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/review');
+        document.location.replace('/');
       } else {
         alert('Failed to add review');
       }
@@ -44,6 +44,6 @@ const newReviewHandler = async (event) => {
     .querySelector('.new-review-form')
     .addEventListener('submit', newReviewHandler);
   
-  document
-    .querySelector('.review-list')
-    .addEventListener('click', deleteReviewHandler);
+  // document
+  //   .querySelector('.review-list')
+  //   .addEventListener('click', deleteReviewHandler);
