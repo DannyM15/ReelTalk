@@ -13,27 +13,23 @@ Review.init({
     title: {
         type: DataTypes.STRING,
         allowNull: false,
-        // validate: {
-        //     isURL: {
-        //         args: false,
-        //         msg: 'content cannot be a URL (╯°□°)╯︵ ┻━┻'
-        //     }
-        // },
     },
     post: {
         type: DataTypes.TEXT,
         allowNull: false,
-        // validate: {
-        //     isURL: {
-        //         args: false,
-        //         msg: 'content cannot be a URL ┻━┻ ︵╰(°□°╰)'
-        //     }
-        // },
     },
     timeCreated: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+    },
+    StarRating: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            min: 1,
+            max: 5,
+        }
     },
     // Store a refernce of the 'id' of the 'user' that creates the post
     user_id: {

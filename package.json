@@ -20,6 +20,7 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "rater-js": "^1.0.1",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "star-rating.js": "^4.3.0"
   }
 }

@@ -1,23 +1,33 @@
 [
     {
       "title": "Space Jam",
-      "post": "Watching MJ and the Looney Tunes was a great way to relive my childhood. GO TOONSQUAD!"
+      "post": "Watching MJ and the Looney Tunes was a great way to relive my childhood. GO TOONSQUAD!",
+      "StarRating": 5
     },
     {
         "title": "Avengers: Endgame",
-        "post": "I literally could not contain myself when watching this movie.  The entire movie theater errupted once the entire cast was together. I also balled like a baby at the end. RIP Tony. You were a real one."
+        "post": "I literally could not contain myself when watching this movie.  The entire movie theater errupted once the entire cast was together. I also balled like a baby at the end. RIP Tony. You were a real one.",
+        "StarRating": 5
+
       },
       {
         "title": "Willys Wonderland? ",
-        "post": "This film definitely gave me Five Nights at Freddies vibe but topped with Nicholas Cage awesomeness. Watching Nick Cage as a silent protag going to town on robots is defintely a must watch for a good time... but I wounldn't watch it again tbh."
+        "post": "This film definitely gave me Five Nights at Freddies vibe but topped with Nicholas Cage awesomeness. Watching Nick Cage as a silent protag going to town on robots is defintely a must watch for a good time... but I wounldn't watch it again tbh.",
+        "StarRating": 3
+
       },
       {
         "title": "Morbious",
-        "post": "WOW! The fact that this film was released on April Fools day really says it all.  I had very low expectations going in and even that was TOO HIGH! oh well, at least we got 'Morbin time' out of it."
+        "post": "WOW! The fact that this film was released on April Fools day really says it all.  I had very low expectations going in and even that was TOO HIGH! oh well, at least we got 'Morbin time' out of it.",
+        "StarRating": 1
+
+        
       },
       {
         "title": "Battleship",
-        "post": "I dont know who's bright idea it was to make a movie based off a childrens board game where 90% of the time your reponse is 'miss.' I guess the action was cool to see but definitely not enough make up for the poor performance. I wouldn't even watch this during my long boring flight."
+        "post": "I dont know who's bright idea it was to make a movie based off a childrens board game where 90% of the time your reponse is 'miss.' I guess the action was cool to see but definitely not enough make up for the poor performance. I wouldn't even watch this during my long boring flight.",
+        "StarRating": 2
+
       }
   ]
   
