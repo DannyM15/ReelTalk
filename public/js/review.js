@@ -1,3 +1,5 @@
+const { default: StarRating } = require("star-rating.js");
+
 const newReviewHandler = async (event) => {
     event.preventDefault();
   
@@ -8,7 +10,7 @@ const newReviewHandler = async (event) => {
     if (title && review ) {
       const response = await fetch(`/api/reviews`, {
         method: 'POST',
-        body: JSON.stringify({ title, post: review }),
+        body: JSON.stringify({ title, post: review, StarRating }),
         headers: {
           'Content-Type': 'application/json',
         },
