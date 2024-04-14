@@ -1,11 +1,9 @@
-const { default: StarRating } = require("star-rating.js");
-
 const newReviewHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#movie-title').value.trim();
     const review = document.querySelector('#post-review').value.trim();
-    // const rating = document.querySelector('#movie-rating').value.trim();
+    const StarRating = document.querySelector('#movie-rating').value.trim();
   
     if (title && review ) {
       const response = await fetch(`/api/reviews`, {
