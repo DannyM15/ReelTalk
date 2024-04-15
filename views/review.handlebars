@@ -1,26 +1,23 @@
+    <link rel="stylesheet" href="main.css">
+    <link href="css/star-rating.css" rel="stylesheet">
+
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-     <a href="/review/{{review.id}}">{{review.title}}</a>
+      <a href="/review/{{review.id}}">{{review.title}}</a>
     </h2>
     <p>Created by {{review.user.username}} on {{review.timeCreated}}</p>
   </div>
   <div class="col-md-7">
     <p>
+      {{ review.StarRating }} Star Rating out of 5 </p>
+    <p>
+    <p>
       {{review.post}}
     </p>
-        <select class="star-rating">
-    <option value="">Select a rating</option>
-    <option value="5">Excellent</option>
-    <option value="4">Very Good</option>
-    <option value="3">Average</option>
-    <option value="2">Poor</option>
-    <option value="1">Terrible</option>
+
   </div>
-  <div class="=star-rating"></div>"
+  <div class="=star-rating"></div>
 </div>
 <script src="js/star-rating.min.js"></script>
-<script>
-    var stars = new StarRating('.star-rating');
-</script>
