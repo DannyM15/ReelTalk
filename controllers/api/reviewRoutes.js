@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
-const rater = require('rater-js');
+// const rater = require('rater-js');
 
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -14,6 +14,20 @@ router.post('/', withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const ReviewData = await Review.findByPk(req.params.id, {
+      include: [{ model: Review }]
+    });
+    if (!categoryData) {
+      res.status(404).json({ message: 'no category found by this id'});
+    }
+    res.status(200).json(ReviewData);
+} catch (error) {
+  res.status(500).json(err);
+}
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
@@ -36,4 +50,4 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-module.exports = router; // this supposed to be here?
+module.exports = router; 

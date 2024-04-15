@@ -3,7 +3,7 @@ const { User, Comment, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => { 
+router.get('/', async (req, res) => {
   try {
     const reviewData = await Review.findAll({
       include: [
@@ -39,13 +39,16 @@ router.get('/review/:id', async (req, res) => {
     const review = reviewData.get({ plain: true });
 
     res.render('review', {
-      ...review,
+      review: review,
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
+
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -70,11 +73,24 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
 
   if (req.session.logged_in) {
-    res.redirect('/'); 
+    res.redirect('/');
     return;
   }
 
-  res.render('login'); 
+  res.render('login');
 });
+
+router.get('/createuser', (req, res) => {
+  res.render('createuser');
+}
+)
+
+router.get('/createreview', withAuth, (req, res) => {
+  res.render('createreview', {
+
+    logged_in: req.session.logged_in,
+  });
+}
+)
 
 module.exports = router;

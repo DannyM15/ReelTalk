@@ -6,7 +6,7 @@ const newReviewHandler = async (event) => {
     const rating = parseFloat(document.querySelector('#movie-rating').value.trim());
   
     if (title && review && rating && rating >= 0 && rating <= 5) {
-      const response = await fetch(`/layouts/createreview`, {
+      const response = await fetch(`/api/review`, {
         method: 'POST',
         body: JSON.stringify({ title, review, rating }),
         headers: {
@@ -15,7 +15,7 @@ const newReviewHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/reviews');
+        document.location.replace('/review');
       } else {
         alert('Failed to add review');
       }
