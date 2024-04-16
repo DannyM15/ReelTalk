@@ -17,6 +17,14 @@ The website should provide social features such as the ability to follow other u
 My profile page should display my username, profile picture (if available), bio, and activity history (e.g., reviews, ratings).
 I should be able to edit my profile information and privacy settings as needed.
 
+## Deployment
+
+please visit the following website to experience the wonderful app.
+https://reel-talk-dm-ed0ac511af21.herokuapp.com/ 
+
+If you'd like to view the reopository please visit
+https://github.com/DannyM15/ReelTalk/tree/main/views 
+
 ## Reference Links:
 
 https://sequelize.org/docs
