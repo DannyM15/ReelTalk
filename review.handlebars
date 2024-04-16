@@ -1,0 +1,53 @@
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <style>
+      body{
+      font-family: 'Courier New', Courier, monospace ;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #664040;
+    background-image: url(/movie-background-collage_23-2149876004.jpg);
+      }
+      header h1 {
+    margin: 0;
+    font-size: 80px;
+    text-align: center;
+    color: azure;
+      }
+      nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+p {
+  color: azure;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.review-link {
+    color: blue;
+    text-decoration: none;
+    text-align: center;
+}
+.review-link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+    </style>
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+     <a href="/review/{{review.id}}" style="color: white; text-decoration: none; display: block; text-align: center;">{{review.title}}</a>
+    </h2>
+    <p>Created by {{review.user.username}} on {{review.timeCreated}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{review.post}}
+    </p>
+  </div>
+</div>
