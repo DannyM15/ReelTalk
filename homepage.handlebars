@@ -1,0 +1,68 @@
+<main>
+        <section class="about">
+            <h2>About Reel Talk</h2>
+            <p>Welcome to Movie Ratings! We provide a platform for movie enthusiasts to discover, rate, and review their favorite movies.</p>
+            <p>Whether you're a casual moviegoer or a hardcore cinephile, you'll find something to enjoy on Movie Ratings.</p>
+            <p>Explore our extensive database of movies, read reviews from other users, and share your own ratings and thoughts.</p>
+            <p>Explore our collection of movies.</p>
+        </section>
+               {{#if logged_in}}
+        <div class="container">
+        <div class="outer-content-square">
+            {{!-- <h2>Title</h2> --}}
+            {{!-- <div class="inner-content-box"> --}}
+                {{!-- <h2>Post</h2> --}}
+                <div class="review-square">
+                    <h2>    Welcome back</h2>
+                    <p>These are your previous posts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       {{/if}}
+        <section class="top-rated">
+            <div class="movie-list">
+                {{!-- {{#each Explore}}
+                    <div class="movie">
+                        <h3>{{ title }}</h3>
+                        <div id="rater"></div>
+                        <img src="{{ imageUrl }}" alt="{{ title }} Poster">
+                        <a href="/movies/{{ id }}" class="btn">Rate/Comment</a>
+                    </div>
+                {{/each}} --}}
+                <!-- Loop over each object in the projects array -->
+
+            </div>
+        </section>
+        {{{ body }}}     
+ <section>
+
+          {{#each reviews as |review| }}
+           <div class="container">  
+        <div class="review-box"
+          <div class="row mb-4 project">
+            <div class="col-md-5">
+              <h2>
+                <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+                <a href="/review/{{review.id}}">{{review.title}}</a>
+              </h2>
+              <p>Created by {{review.user.username}} on {{review.timeCreated}}</p>
+            </div>
+            <div class="col-md-7">
+              <p>
+                {{ review.StarRating }} Star Rating out of 5 </p>
+              <p>
+                {{review.post}}
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+          {{/each}}
+        </section>
+        <script src="js/star-rating.min.js"></script>
+        <script>
+          var stars = new StarRating('.star-rating');
+        </script>
+</main>
